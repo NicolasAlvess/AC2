@@ -5,12 +5,15 @@ public class Main {
 
         FuncionarioBase novoFuncionario = new Funcionario("João", 1200);
         FuncionarioBase gerente = new Gerente("Maria", 5000);
+        FuncionarioBase diretor = new Diretor("Robertinho", 6000.00);
 
         novoFuncionario.calcularSalario();
         gerente.calcularSalario();
+        diretor.calcularSalario();
         
         departamentoTi.adicionarFuncionario(novoFuncionario);
         departamentoTi.adicionarFuncionario(gerente);
+        departamentoTi.adicionarFuncionario(diretor);
 
      
 
