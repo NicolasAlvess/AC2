@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
-public class Departamento{
+
+public class Departamento {
     private String nome;
     private ArrayList<FuncionarioBase> funcionarios;
 
@@ -35,5 +36,5 @@ public class Departamento{
     // Outros métodos úteis podem ser adicionados aqui, como:
     // - calcular a média salarial do departamento
     // - encontrar o funcionário com maior salário
-    // - etc.
+    // - etc...
 }

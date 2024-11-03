@@ -5,4 +5,7 @@ public class Funcionario extends FuncionarioBase{
        return 20.00;
     }
     
+    public String toString(){
+        return ("Nome:"+ this.getNome() + " " + this.calcularSalario());
+    }
 }
