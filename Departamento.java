@@ -33,5 +33,14 @@ public class Departamento {
         return funcionarios;
     }
 
+    public void calcularEImprimirFolhaPagamento() {
+        double folhaPagamento = 0;
+        for (FuncionarioBase funcionario : funcionarios) {
+            double salario = funcionario.getSalarioBase();
+            folhaPagamento += salario;
+        }
+        System.out.println("A folha de pagamento total do departamento de Tecnologia é de: R$ " + folhaPagamento);
+    }
+
     
 }

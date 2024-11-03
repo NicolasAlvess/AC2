@@ -1,18 +1,19 @@
-public class Funcionario extends FuncionarioBase{
 
-    public Funcionario(String Nome, double salario){
-       
+public class Funcionario extends FuncionarioBase {
+
+    public Funcionario(String Nome, double salario) {
+
         setNome(Nome);
         setSalarioBase(salario);
     }
-   
+
     @Override
     public double calcularSalario() {
 
-       return getSalarioBase();
+        return getSalarioBase();
     }
-    
-    public String toString(){
-        return ("Nome:"+ this.getNome() + " R$ " + this.calcularSalario());
+
+    public String toString() {
+        return ("Nome:" + this.getNome() + "Salario: R$ " + this.calcularSalario());
     }
 }
