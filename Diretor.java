@@ -19,14 +19,12 @@ public class Diretor extends FuncionarioBase implements Beneficios{
  
     @Override
     public double calcularBonus(double porcentual) {
-        double bonus;
-       bonus = getSalarioBase() * porcentual;
-        setSalarioBase(getSalarioBase() + bonus);
-        this.bonus = bonus;
 
+         this.bonus = getSalarioBase() * porcentual;
+      setSalarioBase(getSalarioBase() + this.bonus);
+        
        return this.bonus; // fazer a logica para calcular o bonus tendo como base o salario base 
     }
-
     @Override
     public double calcularAuxilioMoradia(double valorFixado) {
        setSalarioBase(getSalarioBase() + valorFixado);
@@ -38,7 +36,7 @@ public class Diretor extends FuncionarioBase implements Beneficios{
     public double calcularSalario() {
      
       this.calcularBonus(0.20);
-      this.calcularAuxilioMoradia(2000);
+      this.calcularAuxilioMoradia(3000);
        return this.salario; 
     }
 

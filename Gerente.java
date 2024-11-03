@@ -9,26 +9,16 @@ public class Gerente extends FuncionarioBase implements Beneficios {
   
   private double bonus;
 
-  public double getBonus() {
-    return bonus;
-}
 
-public void setBonus(double bonus) {
-    this.bonus = bonus;
-}
-    
-
-     
     //sobre escrita do metodo calcularBonus herdado da classe FuncionarioBase para calcular o bonus do gerente
     @Override
     public double calcularBonus(double porcentual) {
 
-        porcentual = getSalarioBase() * 0.20;
-        setSalarioBase(getSalarioBase() + porcentual);
-        setBonus(porcentual);
-
-       return getBonus();
-    }
+        this.bonus = getSalarioBase() * porcentual;
+        setSalarioBase(getSalarioBase() + this.bonus);
+          
+         return this.bonus; // fazer a logica para calcular o bonus tendo como base o salario base 
+      }
 
     @Override
     public double calcularAuxilioMoradia(double valorFixado) {
@@ -36,8 +26,11 @@ public void setBonus(double bonus) {
     }
     
     @Override // classe calcular Salario herdada da classe funcionarioBase 
-    public double calcularSalario() { 
-     return getSalarioBase() + calcularBonus(0.);
+    public double calcularSalario() {
+
+     this.calcularBonus(0.20); 
+     return getSalarioBase();
+
     }
      
     // classe calcular Salario herdada da classe funcionarioBase que aceita parametro de bonus 
