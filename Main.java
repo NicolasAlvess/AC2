@@ -3,19 +3,22 @@ public class Main {
      
         Departamento departamentoTi = new Departamento ("Tecnologia");
 
-        FuncionarioBase novoFuncionario = new Funcionario();
-        
-        novoFuncionario.setNome("Robertinho");
-        novoFuncionario.setSalarioBase(3000);
+        FuncionarioBase novoFuncionario = new Funcionario("João", 1200);
+        FuncionarioBase gerente = new Gerente("Maria", 5000);
+
         novoFuncionario.calcularSalario();
-
+        gerente.calcularSalario();
+        
         departamentoTi.adicionarFuncionario(novoFuncionario);
+        departamentoTi.adicionarFuncionario(gerente);
 
-       
+     
 
         System.out.println("Funcionários do departamento de Tecnologia:");
         for (FuncionarioBase funcionario : departamentoTi.getFuncionarios()) {
             System.out.println(funcionario);
+            
+            
 
         }
             
