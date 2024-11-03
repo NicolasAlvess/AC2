@@ -1,11 +1,13 @@
 public class Funcionario extends FuncionarioBase{
 
     @Override
+    
     public double calcularSalario() {
-       return 20.00;
+
+       return getSalarioBase();
     }
     
     public String toString(){
-        return ("Nome:"+ this.getNome() + " " + this.calcularSalario());
+        return ("Nome:"+ this.getNome() + " R$ " + this.calcularSalario());
     }
 }

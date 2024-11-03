@@ -1,19 +1,20 @@
 public class Main {
     public static void main(String[] args) {
      
-        Departamento departamentoTI = new Departamento ("TI");
+        Departamento departamentoTi = new Departamento ("Tecnologia");
 
         FuncionarioBase novoFuncionario = new Funcionario();
         
-        novoFuncionario.setNome("robertinho");
+        novoFuncionario.setNome("Robertinho");
+        novoFuncionario.setSalarioBase(3000);
         novoFuncionario.calcularSalario();
 
-        departamentoTI.adicionarFuncionario(novoFuncionario);
+        departamentoTi.adicionarFuncionario(novoFuncionario);
 
        
 
-        System.out.println("Funcionários do departamento TI:");
-        for (FuncionarioBase funcionario : departamentoTI.getFuncionarios()) {
+        System.out.println("Funcionários do departamento de Tecnologia:");
+        for (FuncionarioBase funcionario : departamentoTi.getFuncionarios()) {
             System.out.println(funcionario);
 
         }

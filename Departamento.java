@@ -33,8 +33,5 @@ public class Departamento {
         return funcionarios;
     }
 
-    // Outros métodos úteis podem ser adicionados aqui, como:
-    // - calcular a média salarial do departamento
-    // - encontrar o funcionário com maior salário
-    // - etc...
+    
 }

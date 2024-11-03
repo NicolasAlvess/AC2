@@ -12,7 +12,9 @@ public class Diretor extends FuncionarioBase implements Beneficios{
 
     @Override
     public double calcularAuxilioMoradia(double valorFixado) {
-       return 10.00; //fazer a logica para calcular o auxilio moradia tendo como base o salrio base.
+       valorFixado = this.getSalarioBase();
+       
+        return 10.00; //fazer a logica para calcular o auxilio moradia tendo como base o salrio base.
     }
     
 }
