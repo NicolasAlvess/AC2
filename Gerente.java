@@ -32,6 +32,14 @@ public class Gerente extends FuncionarioBase implements Beneficios {
         this.calcularBonus(0.20);
         return getSalarioBase();
     }
+     
+    //sobrecarga do metodo calcular salario Gerente
+    public double calcularSalario(double salario) {
+
+      setSalarioBase(salario);
+      this.calcularBonus(0.20);
+      return getSalarioBase();
+  }
 
     // Formatando a saida do Object utilizando o metodo toString
     public String toString() {

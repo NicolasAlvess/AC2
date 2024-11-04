@@ -33,6 +33,7 @@ public class Departamento {
         return funcionarios;
     }
 
+    //método para calcular e imprimir a folha de pagamento dos funcionarios do departamento
     public void calcularEImprimirFolhaPagamento() {
         double folhaPagamento = 0;
         for (FuncionarioBase funcionario : funcionarios) {

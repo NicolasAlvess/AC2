@@ -7,6 +7,7 @@ public class Diretor extends FuncionarioBase implements Beneficios {
     
     //Construtor
     public Diretor(String nome, double salario) {
+       
         setNome(nome);
         setSalarioBase(salario);
 
@@ -19,9 +20,10 @@ public class Diretor extends FuncionarioBase implements Beneficios {
         this.bonus = getSalarioBase() * porcentual;
         setSalarioBase(getSalarioBase() + this.bonus);
 
-        return this.bonus; // fazer a logica para calcular o bonus tendo como base o salario base 
+        return this.bonus; 
     }
 
+    //Método para calcular auxilio Moradia 
     @Override
     public double calcularAuxilioMoradia(double valorFixado) {
         setSalarioBase(getSalarioBase() + valorFixado);
@@ -29,6 +31,7 @@ public class Diretor extends FuncionarioBase implements Beneficios {
         return valorFixado; //fazer a logica para calcular o auxilio moradia tendo como base o salrio base.
     }
 
+    //Método para calcular salario com bonus e auxilio moradia 
     @Override
     public double calcularSalario() {
 
@@ -36,6 +39,15 @@ public class Diretor extends FuncionarioBase implements Beneficios {
         this.calcularAuxilioMoradia(2000);
         return this.salario;
     }
+    //sobrecarga do metodo calcular salario Diretor
+    public double calcularSalario(double salario) {
+
+        setSalarioBase(salario);
+        this.calcularBonus(0.30);
+        this.calcularAuxilioMoradia(2000);
+        return this.salario;
+    }
+
      //definindo a saida do object Diretor com o metodo toString
     public String toString() {
         return ("Nome: " + getNome() + ", Salario R$ " + getSalarioBase());

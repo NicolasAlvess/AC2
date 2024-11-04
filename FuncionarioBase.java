@@ -10,9 +10,10 @@ public abstract class FuncionarioBase{
     public void setSalarioBase(double salarioBase) {
         this.salarioBase = salarioBase;
     }
-
+ //Método para calcular Salario do funcionario
     public abstract double calcularSalario();
 
+    //get e set da variavel nome
     public String getNome() {
         return nome;
     }
