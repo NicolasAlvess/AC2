@@ -1,7 +1,8 @@
+
 import java.util.ArrayList;
 
-
 public class Departamento {
+
     private String nome;
     private ArrayList<FuncionarioBase> funcionarios;
 
@@ -12,7 +13,6 @@ public class Departamento {
     }
 
     // Métodos
-
     // Getter para o nome do departamento
     public String getNome() {
         return nome;
@@ -43,5 +43,4 @@ public class Departamento {
         System.out.println("A folha de pagamento total do departamento de Tecnologia é de: R$ " + folhaPagamento);
     }
 
-    
 }

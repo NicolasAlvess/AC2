@@ -14,18 +14,15 @@ public class Funcionario extends FuncionarioBase {
 
         return getSalarioBase();
     }
-     
+
     //Sobrecarga do metodo calcular salario 
     public double calcularSalario(double salario) {
-        
-        setSalarioBase(salario);
 
+        setSalarioBase(salario);
         return getSalarioBase();
     }
 
-
-
-     //definindo a saida do object Funcionario com o metodo toString
+    //definindo a saida do object Funcionario com o metodo toString
     public String toString() {
         return ("Nome:" + this.getNome() + ", Salario: R$ " + this.calcularSalario());
     }

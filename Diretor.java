@@ -3,24 +3,39 @@ public class Diretor extends FuncionarioBase implements Beneficios {
 
     //variaveis encapsualdas
     private double bonus;
-    private double salario;
-    
-    //Construtor
-    public Diretor(String nome, double salario) {
-       
-        setNome(nome);
-        setSalarioBase(salario);
+    private double porcentagemBonus;
 
+    //get e set de calcular Bonus
+    public double getPorcentagemBonus() {
+        return porcentagemBonus;
     }
 
-     //Sobre Ecrita de metodo herdado pela classe FuncionarioBase
+    public void setPorcentagemBonus(double calcularBonus) {
+        this.porcentagemBonus = calcularBonus;
+    }
+
+    //Construtor
+    public Diretor(String nome, double salario) {
+
+        setNome(nome);
+        setSalarioBase(salario);
+    }
+
+    //sobrecarga de construtor
+    public Diretor(String nome, double salario, double porcentagem) {
+        setNome(nome);
+        setSalarioBase(salario);
+        setPorcentagemBonus(porcentagem);
+    }
+
+    //Sobre Ecrita de metodo herdado pela classe FuncionarioBase
     @Override
     public double calcularBonus(double porcentual) {
-       
+
         this.bonus = getSalarioBase() * porcentual;
         setSalarioBase(getSalarioBase() + this.bonus);
 
-        return this.bonus; 
+        return this.bonus;
     }
 
     //Método para calcular auxilio Moradia 
@@ -35,20 +50,20 @@ public class Diretor extends FuncionarioBase implements Beneficios {
     @Override
     public double calcularSalario() {
 
-        this.calcularBonus(0.30);
-        this.calcularAuxilioMoradia(2000);
-        return this.salario;
-    }
-    //sobrecarga do metodo calcular salario Diretor
-    public double calcularSalario(double salario) {
+        if (this.porcentagemBonus == 0) {
 
-        setSalarioBase(salario);
-        this.calcularBonus(0.30);
+            this.calcularBonus(0.30);
+
+        } else {
+
+            this.calcularBonus(getPorcentagemBonus());
+        }
+
         this.calcularAuxilioMoradia(2000);
-        return this.salario;
+        return getSalarioBase();
     }
 
-     //definindo a saida do object Diretor com o metodo toString
+    //definindo a saida do object Diretor com o metodo toString
     public String toString() {
         return ("Nome: " + getNome() + ", Salario R$ " + getSalarioBase());
 
